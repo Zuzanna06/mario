@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.results{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    width:100%;
+}
+.card{
+    border-radius:5px;
+    width: 300px;
+    margin: 10px auto;    
+    padding: 25px;
+    background: rgba(50, 21, 17, 0.3);
+    border: 2px solid #fbfbfb;
+    border-radius: 20px/50px;
+}
+
+
+
