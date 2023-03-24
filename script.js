@@ -158,6 +158,9 @@ results.innerHTML = Object.values(maCollestion).map( (jeu, index) =>`
 
 let boutons = document.getElementsByTagName('button');
 console.log(boutons);
+let jeuTitre = document.getElementById("titre");
+let jeuDate = document.getElementById("date");
+let jeuConsole = document.getElementById("console");
 
 for (let index = 0; index < boutons.length; index++) {
     console.log(boutons[index])
@@ -165,6 +168,9 @@ for (let index = 0; index < boutons.length; index++) {
         console.log(boutons[index].id);
         let key = boutons[index].id; // je stock chaques button avec leurs id
         console.log(maCollestion[key]); 
+        jeuTitre.innerText = maCollestion[key].nom;
+        jeuDate.innerText = maCollestion[key].date;
+        jeuConsole.innerText = maCollestion[key].console;
         modal.style.display = "block";
     })
 }
