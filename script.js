@@ -87,15 +87,15 @@ function Jeux(nom, date, console) {
     this.console = console
 }
 
-let maConsole = new Jeux("Super Mario Bros", 1985, "NES");
-let maConsole1 = new Jeux("Super Mario All-Stars", 1993, "SNES");
-let maConsole2 = new Jeux("Super Mario Land 3", 1994, "Game Boy");
-let maConsole3 = new Jeux("Super Mario Galaxy", 2007, "Wii");
-let maConsole4 = new Jeux("Super Mario - 64 / 64", 1996, "Nintendo 64");
-let maConsole5 = new Jeux("Super Mario Bros. Deluxe", 1999, "Game Boy Color");
-let maConsole6 = new Jeux("Super Mario Advance", 2000, "Game Boy Advance");
-let maConsole7 = new Jeux("Super Mario Galaxy", 2007, "Wii");
-let maConsole8 = new Jeux("Super Mario 3D World", 2013, "Wii U");
+let maConsole1 = new Jeux("Super Mario Bros", 1985, "NES");
+let maConsole2 = new Jeux("Super Mario All-Stars", 1993, "SNES");
+let maConsole3 = new Jeux("Super Mario Land 3", 1994, "Game Boy");
+let maConsole4 = new Jeux("Super Mario Galaxy", 2007, "Wii");
+let maConsole5 = new Jeux("Super Mario - 64 / 64", 1996, "Nintendo 64");
+let maConsole6 = new Jeux("Super Mario Bros. Deluxe", 1999, "Game Boy Color");
+let maConsole7 = new Jeux("Super Mario Advance", 2000, "Game Boy Advance");
+let maConsole8 = new Jeux("Super Mario Galaxy", 2007, "Wii");
+let maConsole9 = new Jeux("Super Mario 3D World", 2013, "Wii U");
 
 
 
@@ -104,7 +104,7 @@ let maConsole8 = new Jeux("Super Mario 3D World", 2013, "Wii U");
 // let maCollection = new Object;
 // // maCollection = Object.assign({}, maConsole1, maConsole3) pas pour sa
 
-let maCollestion = { ...{maConsole}, ...{maConsole1}, ...{maConsole2}, ...{maConsole3}, ...{maConsole4}, ...{maConsole5}, ...{maConsole6}, ...{maConsole7}, ...{maConsole8}};
+let maCollestion = { ...{maConsole1}, ...{maConsole2}, ...{maConsole3}, ...{maConsole4}, ...{maConsole5}, ...{maConsole6}, ...{maConsole7}, ...{maConsole8}, ...{maConsole9}};
 
 for (const key in maCollestion)
 {
@@ -121,14 +121,27 @@ for (const key in maCollestion)
 // )
 
 
-results.innerHTML = Object.values(maCollestion).map( jeu =>`
+results.innerHTML = Object.values(maCollestion).map( (jeu, index) =>`
     <div class="card">
         <h2>Titre : ${jeu.nom}</h2>
         <h3>Console : ${jeu.console}</h3>
         <h4>Année : ${jeu.date}</h4>
-        <button></button>
+        <button id='maConsole${index+1}'>OPEN</button>
         
     </div>
 `).join("");
 
 // tout les le balise html se sont des objet
+
+let boutons = document.getElementsByTagName('button');
+console.log(boutons);
+
+for (let index = 0; index < boutons.length; index++) {
+    console.log(boutons[index])
+    boutons[index].addEventListener('click', e => {
+        console.log(e);
+    })
+}
+
+
+
