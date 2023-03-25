@@ -104,14 +104,15 @@ window.onclick = function(event) {
 // funtion constructeur
 const results = document.querySelector('.results');
 
-function Jeux(nom, date, console, descriptions) {
+function Jeux(nom, date, console, descriptions, image) {
     this.nom = nom,
     this.date = date,
     this.console = console,
-    this.descriptions = descriptions
+    this.descriptions = descriptions,
+    this.image = image
 }
 
-let maConsole1 = new Jeux("Super Mario Bros", 1985, "NES", "Super Mario Bros. est un jeu vidéo de plates-formes à défilement horizontal développé par Nintendo R&D4 et édité par Nintendo. Il est sorti sur Famicom au Japon en 1985 puis sur Nintendo Entertainment System en Amérique du Nord la même année et en 1987 en Europe. Il s'agit du premier jeu de la série Super Mario.");
+let maConsole1 = new Jeux("Super Mario Bros", 1985, "NES", "Super Mario Bros. est un jeu vidéo de plates-formes à défilement horizontal développé par Nintendo R&D4 et édité par Nintendo. Il est sorti sur Famicom au Japon en 1985 puis sur Nintendo Entertainment System en Amérique du Nord la même année et en 1987 en Europe. Il s'agit du premier jeu de la série Super Mario.", "https://mario.nintendo.com/static/fd723b2893d4d2b39ef71bfdb4e3329c/579b4/mario-background.png");
 let maConsole2 = new Jeux("Super Mario All-Stars", 1993, "SNES", "Super Mario Bros. est un jeu vidéo de plates-formes à défilement horizontal développé par Nintendo R&D4 et édité par Nintendo. Il est sorti sur Famicom au Japon en 1985 puis sur Nintendo Entertainment System en Amérique du Nord la même année et en 1987 en Europe. Il s'agit du premier jeu de la série Super Mario.");
 let maConsole3 = new Jeux("Super Mario Land 3", 1994, "Game Boy", "Super Mario Bros. est un jeu vidéo de plates-formes à défilement horizontal développé par Nintendo R&D4 et édité par Nintendo. Il est sorti sur Famicom au Japon en 1985 puis sur Nintendo Entertainment System en Amérique du Nord la même année et en 1987 en Europe. Il s'agit du premier jeu de la série Super Mario.");
 let maConsole4 = new Jeux("Super Mario Galaxy", 2007, "Wii", "Super Mario Bros. est un jeu vidéo de plates-formes à défilement horizontal développé par Nintendo R&D4 et édité par Nintendo. Il est sorti sur Famicom au Japon en 1985 puis sur Nintendo Entertainment System en Amérique du Nord la même année et en 1987 en Europe. Il s'agit du premier jeu de la série Super Mario.");
@@ -163,6 +164,7 @@ let jeuTitre = document.getElementById("titre");
 let jeuDate = document.getElementById("date");
 let jeuConsole = document.getElementById("console");
 let jeuDescriptions = document.getElementById("descriptions");
+let jeuImage = document.getElementById("image")
 
 for (let index = 0; index < boutons.length; index++) {
     console.log(boutons[index])
@@ -174,6 +176,7 @@ for (let index = 0; index < boutons.length; index++) {
         jeuDate.innerText = maCollestion[key].date;
         jeuConsole.innerText = maCollestion[key].console;
         jeuDescriptions.innerText = maCollestion[key].descriptions;
+        jeuImage.src = maCollestion[key].image;
         modal.style.display = "block";
     })
 }
