@@ -57,5 +57,8 @@
     text-decoration: none;
     cursor: pointer;
   }
+  #image{
+    width: 18%;
+  }
 
 
