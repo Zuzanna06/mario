@@ -12,13 +12,15 @@
 }
 .card{
     border-radius:5px;
+    color: #fbfbfb;
     width: 300px;
     margin: 10px auto;    
     padding: 25px;
-    background: rgba(173, 20, 0, 0.8);
+    background: rgba(0, 52, 121, 0.8);
     border: 2px solid #fbfbfb;
     border-radius: 20px/50px;
 }
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -61,6 +63,14 @@
     width: 18%;
     margin-top: 2%;
   }
+
+  .jeu.date{
+    color: #fefefe;
+}
+  #nom{
+      color: #fefefe;
+  }
+  
  
 
 
